@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { RecoilRoot, useRecoilValue } from 'recoil'
+import './App.css'
+import Card from './components/Card'
+import CardEditable from './components/CardEditable'
+import editModeSelector from './selector/editMode.selector'
 
-function App() {
+const App = () => {
+  const isEditable = useRecoilValue(editModeSelector)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { isEditable ? <CardEditable/> : <Card/> }
     </div>
-  );
+  )
 }
 
-export default App;
+const AppWrapper = () => {
+  return (
+    <RecoilRoot>
+      <App/>
+    </RecoilRoot>
+  )
+}
+
+export default AppWrapper;

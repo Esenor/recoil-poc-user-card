@@ -9,7 +9,6 @@ import emailSelector from '../selector/email.selector'
 import streetSelector from '../selector/street.selector'
 import citySelector from '../selector/city.selector'
 
-
 const CardEditable = () => {
   const { avatar, username, email, street, city } = useRecoilValue(getCardData)
   //

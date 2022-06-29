@@ -5,7 +5,7 @@ import customerAtom from '../atom/customer.atom'
 
 const cardSelector = selector({
   key: 'cardSelector',
-  get: ({get}) => {
+  get: ({ get }) => {
     const avatar = get(avatarAtom)
     const customer = get(customerAtom)
     const address = get(addressAtom)

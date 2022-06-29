@@ -3,11 +3,11 @@ import customer from '../atom/customer.atom'
 
 const emailSelector = selector({
   key: 'emailSelector',
-  get: ({get}) => get(customer).email,
-  set: ({set, get}, onChangeEvent) => {
+  get: ({ get }) => get(customer).email,
+  set: ({ set, get }, onChangeEvent) => {
     const customerData = get(customer)
     set(customer, {
-      ...customerData, 
+      ...customerData,
       email: onChangeEvent.target.value
     })
   }

@@ -1,3 +1,4 @@
+import React from 'react'
 import { RecoilRoot, useRecoilValue } from 'recoil'
 import './App.css'
 import Card from './components/Card'
@@ -21,4 +22,4 @@ const AppWrapper = () => {
   )
 }
 
-export default AppWrapper;
+export default AppWrapper
